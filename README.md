@@ -12,7 +12,7 @@ Hyperparameters relative to the algorithm can be edited in the code
 test_games.py is the script to test the agents, it makes the agents play some games and it outputs some statistics, the parameters are:
 -a : agent type ["ppo", "dqn"].
 -vs : agent type of the second team ["ppo", "dqn", rnd].
--n : number of games (a game is composed by more episodes who scores > 41 and > than the other wins).
+-n : number of games (a game is composed by more episodes who scores >= 41 and > than the other wins).
 
 play.py is the script to play with the agents, 1 agent in your team and vs 2,  there is a simple terminal interface, the parameters are:
 -a : agent type ["ppo", "dqn"].
