@@ -8,8 +8,8 @@ from Models.Q_Network import QNet
 import argparse
 
 parser = argparse.ArgumentParser(description='')
-parser.add_argument('--agent_type', '-a', default="ppo", choices=["ppo", "ddqn"] )
-parser.add_argument('--vs_agent_type', '-vs', default="rnd", choices=["ppo", "ddqn", "rnd"])
+parser.add_argument('--agent_type', '-a', default="ppo", choices=["ppo", "dqn"] )
+parser.add_argument('--vs_agent_type', '-vs', default="rnd", choices=["ppo", "dqn", "rnd"])
 parser.add_argument('--n_games', '-n', default=1000, type=int)
 args = parser.parse_args()
 max_games = args.n_games
@@ -19,7 +19,7 @@ state = m_env.get_obs(0)
 
 p = [0, 0, 0, 0]
 
-if args.agent_type == "ddqn":
+if args.agent_type == "dqn":
     Q_net = QNet(input_shape=state.shape, num_actions=m_env.n_actions)
     Q_net(m_env.get_obs(0)[np.newaxis])
     #Q_net.load_weights('final_checkpoints/dqn_exploit_40')
