@@ -37,7 +37,7 @@ p = [0, 0, 0, 0]
 if args.agent_type == "dqn":
     Q_net = QNet(input_shape=state.shape, num_actions=m_env.n_actions)
     Q_net(m_env.get_obs(0)[np.newaxis])
-    Q_net.load_weights("./final_checkpoints/dqn_sp_4_20_p")
+    Q_net.load_weights("./final_checkpoints/dqn_sp_4_20")
     agent = DQN_Agent(training=False, Q_Net=Q_net)
 
 if args.agent_type == "ppo":
